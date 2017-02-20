@@ -1,0 +1,96 @@
+$gray:      #f5f5f5;
+$dark-gray: #333;
+$black:     #000;
+$white:     #fff;
+$primary:   #337ab7;
+$alive:     #e44;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $dark-gray;
+}
+
+.well {
+  background: $gray;
+  box-shadow: 10px 10px 10px $black;
+  padding: 5px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.btn {
+  background-color: $primary;
+  border: 1px solid darken($primary, 5%);
+  border-radius: 4px;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  padding: 6px 12px;
+  margin-right: 10px;
+  &.active {
+    background-color: darken($primary, 10%);
+    border-color: darken($primary, 15%);
+  }
+}
+
+h1 {
+  margin-bottom: 20px;
+  a {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
+.top-menu, .bottom-menu, .info {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.top-menu {
+  border-radius: 5px 5px 0 0;
+}
+
+.bottom-menu {
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 20px;
+}
+
+.board {
+  border-radius: 5px;
+  font-size: 0;
+  margin: 0 auto;
+}
+
+.cell-wrapper {
+  overflow: auto;
+}
+
+.cell {
+  background-color: darken($gray, 20%);
+  border-left: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  float: left;
+  height: 10px;
+  width: 10px;
+  &.alive {
+    background-color: $alive;
+    &.young {
+      background-color: lighten($alive, 20%);
+    }
+  }
+}
+
+.info {
+  border-radius: 4px;
+}
+
+
+
+
+
+
