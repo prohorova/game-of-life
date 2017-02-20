@@ -12,7 +12,7 @@ class Board extends Component {
                 <div key={i} className="cell-wrapper">
                     {
                         row.map((cell, j) => 
-                            <CellSpace key={j} cell={cell} col={i} row={j}
+                            <CellSpace key={`${i}_${j}`} cell={cell} col={i} row={j}
                             toggleCell={this.props.toggleCell}/>)
                     }
                 </div>
