@@ -19,10 +19,11 @@ const AppActionCreators = {
     },
     run() {
         return (dispatch, getState) => {
-            let { timer, boardData } = getState();
+            let timer = getState().timer;
             if (!timer) {
                 timer = setInterval(() => {
-                    if (utils.hasLiveCells(boardData.board)) {
+                    let board = getState().boardData.board;
+                    if (utils.hasLiveCells(board)) {
                         dispatch({type: constants.NEXT_GENERATION});
                     } else {
                         dispatch({type: constants.RESET});

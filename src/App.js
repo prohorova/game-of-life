@@ -12,14 +12,14 @@ class App extends Component {
         this.changeBoardSize = this.changeBoardSize.bind(this);
     }
     componentDidMount() {
-        this.props.reset(true);
+        this.props.resetBoard(true);
         this.props.run();
     }
     clear() {
-        this.props.reset(false);
+        this.props.resetBoard(false);
     }
     changeBoardSize(boardSize) {
-        this.props.reset(false, boardSize);
+        this.props.resetBoard(false, boardSize);
     }
     render() {
         return (
@@ -47,7 +47,7 @@ class App extends Component {
 App.propTypes = {
     board: PropTypes.array.isRequired,
     generation: PropTypes.number.isRequired,
-    reset: PropTypes.func.isRequired,
+    resetBoard: PropTypes.func.isRequired,
     run: PropTypes.func.isRequired,
     toggleCell: PropTypes.func.isRequired,
     pause: PropTypes.func.isRequired
@@ -59,7 +59,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    reset: (shouldFillRandomly, size) => {
+    resetBoard: (shouldFillRandomly, size) => {
         dispatch(AppActionCreators.resetBoard(shouldFillRandomly, size))
     },
     run: () => {
