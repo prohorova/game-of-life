@@ -12,8 +12,6 @@ let initialState = {
 const boardData = (state = initialState, action) => {
     let board;
     switch (action.type) {
-        case constants.SET_BOARD_SIZE:
-            return { ...state, boardSize: action.boardSize};
         case constants.RESET:
             let boardSize = action.boardSize || state.boardSize;
             board = utils.generateBoard(
