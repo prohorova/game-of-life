@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class TopMenu extends Component {
     render() {
@@ -12,5 +12,12 @@ class TopMenu extends Component {
         )
     }
 }
+
+TopMenu.propTypes = {
+    run: PropTypes.func.isRequired,
+    pause: PropTypes.func.isRequired,
+    clear: PropTypes.func.isRequired,
+    generation: PropTypes.number.isRequired
+};
 
 export default TopMenu;

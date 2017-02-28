@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import CellSpace from './CellSpace';
 
 class Board extends Component {
@@ -25,5 +25,10 @@ class Board extends Component {
         )
     }
 }
+
+Board.propTypes = {
+    toggleCell: PropTypes.func.isRequired,
+    board: PropTypes.array.isRequired
+};
 
 export default Board;

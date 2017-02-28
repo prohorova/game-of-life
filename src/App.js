@@ -44,6 +44,15 @@ class App extends Component {
     }
 }
 
+App.propTypes = {
+    board: PropTypes.array.isRequired,
+    generation: PropTypes.number.isRequired,
+    reset: PropTypes.func.isRequired,
+    run: PropTypes.func.isRequired,
+    toggleCell: PropTypes.func.isRequired,
+    pause: PropTypes.func.isRequired
+};
+
 const mapStateToProps = (state) => ({
     board: state.boardData.board,
     generation: state.generation

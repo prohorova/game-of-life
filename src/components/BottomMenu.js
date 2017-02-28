@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class BottomMenu extends Component {
     handleClick(cols, rows) {
@@ -24,5 +24,9 @@ class BottomMenu extends Component {
         )
     }
 }
+
+BottomMenu.propTypes = {
+    changeBoardSize: PropTypes.func.isRequired
+};
 
 export default BottomMenu;
