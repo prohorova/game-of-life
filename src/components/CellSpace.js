@@ -1,27 +1,24 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
-class CellSpace extends Component {
-    handleClick(col, row) {
-        this.props.toggleCell(col, row);
-    }
-    render() {
-        let classes = classNames({
-            'cell': true,
-            'alive': this.props.cell.alive,
-            'young': this.props.cell.young
-        });
-        return (
-            <div className={classes} 
-                onClick={this.handleClick.bind(this, this.props.col, this.props.row)}>
-            </div>
-        )
-    }
-}
+const CellSpace = ({cell, col, row, toggleCell}) => {
+    let classes = classNames({
+        'cell': true,
+        'alive': cell.alive,
+        'young': cell.young
+    });
+    return (
+        <div className={classes}
+             onClick={() => toggleCell(col, row)}>
+        </div>
+    )
+};
 
 CellSpace.propTypes = {
     toggleCell: PropTypes.func.isRequired,
-    cell: PropTypes.object.isRequired
+    cell: PropTypes.object.isRequired,
+    col: PropTypes.number,
+    row: PropTypes.number
 };
 
 export default CellSpace;

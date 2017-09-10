@@ -22,6 +22,8 @@ class App extends Component {
         this.props.resetBoard(false, boardSize);
     }
     render() {
+        const { run, pause, toggleCell, generation, board } = this.props;
+
         return (
             <div>
                 <h1 className="well">
@@ -29,9 +31,9 @@ class App extends Component {
                         Conway's Game of Life (click to learn more)
                     </a>
                 </h1>
-                <TopMenu run={this.props.run} pause={this.props.pause}
-                         clear={this.clear} generation={this.props.generation}/>
-                <Board board={this.props.board} toggleCell={this.props.toggleCell}/>
+                <TopMenu run={run} pause={pause}
+                         clear={this.clear} generation={generation}/>
+                <Board board={board} toggleCell={toggleCell}/>
                 <BottomMenu changeBoardSize={this.changeBoardSize} />
 
                 <div className="info well">
